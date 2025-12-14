@@ -1,0 +1,7 @@
+/* TodoList */
+.todoList {
+  width: 90%; /* 화면의 90% */
+  max-width: 500px; /* 최대 500px */
+  margin: 5vh auto; /* 상하 여백도 화면 비례 */
+  padding: 5%;
+}

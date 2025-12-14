@@ -1,0 +1,28 @@
+/* CSS */
+
+.todoItem {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 5%;
+  border-bottom: 1px solid #eee;
+  width: 100%;
+}
+
+.todoItem span:first-child {
+  width: 30px;
+  text-align: right; /* 숫자 오른쪽 정렬 */
+}
+
+.todoItem span:nth-child(2) {
+  flex: 1;
+  text-align: left;
+}
+
+.done {
+  color: green;
+}
+
+.todo {
+  color: orange;
+}
