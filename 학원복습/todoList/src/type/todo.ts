@@ -14,6 +14,10 @@ export interface TodoInput {
   ok: number;
   item: TodoInputProps;
 }
+// props 타입 정의
+export interface TodoInsertProps {
+  addTodo: (title: string) => void;
+}
 //todolist 할일 등록 props
 export interface TodoInputProps {
   _id: number;

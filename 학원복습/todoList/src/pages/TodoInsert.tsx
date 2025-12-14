@@ -1,11 +1,39 @@
+import type { TodoInsertProps } from "@/type/todo";
 import "@styles/TodoInsert.css";
-function TodoInsert() {
+import { useState } from "react";
+function TodoInsert({ addTodo }: TodoInsertProps) {
+  const [inputValue, setInputValue] = useState("");
+  const inputHandle = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const inputResult = event.target.value;
+    setInputValue(inputResult);
+  };
+  const keyDownHandle = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "Enter") {
+      if (inputValue.trim() === "") return;
+      addTodo(inputValue);
+      setInputValue("");
+    }
+  };
+
+  const buttonHandle = () => {
+    if (inputValue.trim() === "") {
+      return;
+    }
+    addTodo(inputValue); // 부모 함수 호출
+    setInputValue("");
+  };
+
   return (
     <section className="todoInsert">
       <h2>할일 등록 </h2>
       <div>
-        <input type="text" />
-        <button>등록 </button>
+        <input
+          type="text"
+          value={inputValue}
+          onKeyDown={keyDownHandle}
+          onChange={inputHandle}
+        />
+        <button onClick={buttonHandle}>등록</button>
       </div>
     </section>
   );
