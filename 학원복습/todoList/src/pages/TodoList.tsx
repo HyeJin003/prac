@@ -1,6 +1,7 @@
 import TodoInsert from "@/pages/TodoInsert";
 import TodoItem from "@/pages/TodoItem";
 import "@styles/TodoList.css";
+import { useState } from "react";
 
 function TodoList() {
   const todoList = [
@@ -15,6 +16,19 @@ function TodoList() {
     // { _id: 9, title: "리액트", done: false },
     // { _id: 10, title: "리액트", done: false },
   ];
+  const [data, setData] = useState(todoList);
+  const addTodo = (title: string) => {
+    if (title.trim() === "") {
+      return;
+    }
+    const newTodo = {
+      _id: data.length + 1, // 고유 key
+      title: title,
+      done: false,
+    };
+
+    setData((prev) => [...prev, newTodo]);
+  };
   // 1. 내가 하고 싶은데로 쓰면 간단하게 할 수 있음
   // 2. 다만 보통 재사용성 /가독성 때문에 컴포넌트 분리해서 씀 그렇기 때문에 .map 을 여기가 아니라 렌더링쪽으로 보내준다
   // const todo = todoList.map((item) => {
@@ -29,12 +43,12 @@ function TodoList() {
   return (
     <>
       <div>
-        <TodoInsert />
+        <TodoInsert addTodo={addTodo} />
       </div>
       <div className="todoList">
         <h2>할 일 목록</h2>
-
-        {todoList.map((item) => (
+        <input type="text" placeholder="검색어를 입력하세요" />
+        {data.map((item) => (
           <TodoItem key={item._id} {...item} />
         ))}
       </div>
