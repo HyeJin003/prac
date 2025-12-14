@@ -26,3 +26,10 @@
 .todo {
   color: orange;
 }
+button {
+  color: rgba(128, 128, 128, 0.921);
+  border: none;
+  width: 40px; /* 너비 설정 */
+  height: 30px; /* 높이 설정 */
+  border-radius: 7px;
+}

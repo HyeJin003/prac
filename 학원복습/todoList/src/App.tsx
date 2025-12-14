@@ -6,11 +6,7 @@ import TodoList from "@pages/TodoList";
 function App() {
   // const [count, setCount] = useState(0);
 
-  return (
-    <>
-      <TodoList />
-    </>
-  );
+  return <>{<TodoList />}</>;
 }
 
 export default App;

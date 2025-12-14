@@ -1,0 +1,33 @@
+/* .todoInsert {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 5%;
+  border-bottom: 1px solid #eee;
+  width: 100%;
+} */
+
+.todoInsert {
+  width: 90%;
+  max-width: 500px;
+  margin: 5vh auto;
+  padding: 5%;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.todoInsert h2 {
+  text-align: left;
+}
+
+.todoInsert input {
+  width: 250px;
+  height: 30px;
+  padding: 0 10px;
+  border-radius: 7px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+}
